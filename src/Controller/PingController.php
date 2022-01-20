@@ -11,9 +11,8 @@ class PingController extends AbstractController
     #[Route('/ping', name: 'ping')]
     public function index(): Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/PingController.php',
+        return $this->render('ping/index.html.twig', [
+            'controller_name' => 'PingController',
         ]);
     }
 }
