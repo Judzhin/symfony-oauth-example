@@ -42,10 +42,10 @@ services:
       target: ${APP_ENV:-dev}
       dockerfile: .docker/mariadb/Dockerfile
     environment:
-      MYSQL_DATABASE: ${MYSQL_DATABASE:-ic.dev}
-      MYSQL_USER: ${MYSQL_USER:-ic.dev}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-symfony.dev}
+      MYSQL_USER: ${MYSQL_USER:-symfony}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-XtByqo%asj81CJmM[dfC}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-EtExf4QyJ6Gca7a6}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
     ports:
       - ${MYSQL_PORT:-9033}:3306
     volumes:
