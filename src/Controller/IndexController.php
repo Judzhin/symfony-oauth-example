@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class PingController extends AbstractController
+class IndexController extends AbstractController
 {
-    #[Route('/ping', name: 'ping')]
+    #[Route('/', name: 'index')]
     public function index(): Response
     {
         return $this->json([
-            'controller_name' => 'PingController',
+            'controller_name' => 'IndexController',
         ]);
     }
 }
