@@ -19,14 +19,17 @@ security:
       pattern: ^/token$
       security: false
 
-    main:
-      # lazy: true
-      provider: users_in_memory
-      pattern: ^/
+    api:
+      pattern: ^/api
       security: true
       stateless: true
       oauth2: true
-      entry_point: League\Bundle\OAuth2ServerBundle\Security\Authenticator\OAuth2Authenticator
+      provider: users_in_memory
+
+    main:
+      lazy: true
+      provider: users_in_memory
+      # entry_point: League\Bundle\OAuth2ServerBundle\Security\Authenticator\OAuth2Authenticator
       # activate different ways to authenticate
       # https://symfony.com/doc/current/security.html#the-firewall
 
@@ -39,7 +42,6 @@ security:
   # - { path: ^/admin, roles: ROLE_ADMIN }
   # - { path: ^/profile, roles: ROLE_USER }
     - { path: ^/authorize, roles: IS_AUTHENTICATED_REMEMBERED }
-  # - { path: ^/, roles: ROLE_USER }
 
 when@test:
   security:

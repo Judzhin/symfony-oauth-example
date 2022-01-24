@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PingController extends AbstractController
 {
-    #[Route('/ping', name: 'ping')]
+    #[Route('/api/ping', name: 'ping')]
     public function index(): Response
     {
         return $this->json([
